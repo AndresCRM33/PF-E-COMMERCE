@@ -3,11 +3,21 @@ const mongoose = require("mongoose")
 const PostScheme = new mongoose.Schema(
     {
         imagen: {
-            type: String,
-            required: true
+            type: String
         },
         valor: {
-            type: String,
+            type: String
+        },
+        tipoBusqueda: {
+            type: ["comprar", "alquilar", "temporal"],
+            required: true
+        },
+        tipoVivienda: {
+            type: ["departamento", "casa", "ph", "terreno", "local comercial", "oficina"],
+            required: true
+        },
+        tipoAmbiente: {
+            type: ["2 ambiente", "3 ambiente", "4 ambiente"],
             required: true
         },
         ciudad: {
@@ -16,9 +26,6 @@ const PostScheme = new mongoose.Schema(
                 "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucuman"],
             required: true
         },
-        detalle: {
-            type: String
-        },
         caracteristicas: {
             type: ["parking", "asador", "pileta", "zom", "hogar"]
         },
@@ -26,6 +33,12 @@ const PostScheme = new mongoose.Schema(
             type: ["dueño", "inmobiliaria"],
             required: true
         },
+        celular: {
+            type: String
+        },
+        mail: {
+            type: String
+        }
     },
     {
         timestamps: true,
