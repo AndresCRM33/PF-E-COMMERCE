@@ -47,3 +47,5 @@ const PostScheme = new mongoose.Schema(
         timestamps: true,
     }
 )
+
+module.exports = mongoose.model("posts", UserScheme)
